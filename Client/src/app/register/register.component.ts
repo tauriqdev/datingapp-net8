@@ -20,14 +20,18 @@ export class RegisterComponent {
 
   model: any = {};
 
+  validationErrors: string[] = [];
+
   register() {
     this.accountService.register(this.model).subscribe({
       next: response => {
         console.log(response);
         this.cancel();
       },
-      error: error =>{
+      error: error => {
         this.toastr.error(error.error);
+        console.log('error:', error);
+        this.validationErrors = error;
       }
     });
   }
