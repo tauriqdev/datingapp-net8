@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RegisterComponent {
 
-  usersFromHomeComponent = input.required<any>();
+  // usersFromHomeComponent = input.required<any>();
   cancelRegister = output<boolean>();
 
   private accountService = inject(AccountService);
